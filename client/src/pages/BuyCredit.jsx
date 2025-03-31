@@ -1,12 +1,18 @@
 import React, { useContext } from 'react'
 import { assets, plans } from '../assets/assets'
 import {AppContext} from '../context/AppContext'
+import {motion} from 'framer-motion'
 
 export const BuyCredit = () => {
 
   const {user} = useContext(AppContext);
   return (
-    <div>
+    <motion.div
+        initial={{opacity:0.2, y:100}}
+        transition={{duration:1}}
+        whileInView={{opacity:1, y:0}}
+        viewport={{once:true}}
+    >
      <div className="flex flex-col items-center">
        <p className="bg-white border border-lime-200
        rounded-full px-4 py-1 text-gray-600 text-xs mt-16">
@@ -23,7 +29,7 @@ export const BuyCredit = () => {
         {plans.map((items, index) => (
           <div
             key={index}
-            className="bg-gray-200 py-6 border border-gray-300 shadow-md rounded-md 
+            className="bg-gray-100 py-6 border border-gray-300 shadow-md rounded-md 
             min-w-[250px] max-w-[300px] flex flex-col items-center hover:scale-105  transition-all duration-500"
           >
             <img src={assets.logo_icon} alt="" className="w-12 h-12 mb-2" />
@@ -50,7 +56,7 @@ export const BuyCredit = () => {
         ))}
       </div>
     </div>
-  </div>
+  </motion.div>
   
 
   )

@@ -1,10 +1,15 @@
 import React from 'react'
 import { assets } from '../assets/assets'
+import {motion} from 'framer-motion'
 
 const Description = () => {
   return (
-    <div>
-
+    <motion.div
+      initial={{opacity:0.2, y:100}}
+      transition={{duration:1}}
+      whileInView={{opacity:1, y:0}}
+      viewport={{once:true}}
+    >
 
     <div className='flex items-center flex-col'>
       <p className='text-4xl text-slate-800'>Create AI Images</p>
@@ -35,9 +40,9 @@ const Description = () => {
       </div>
 
 
-</div>
-     
     </div>
+     
+  </motion.div>
     
   )
 }

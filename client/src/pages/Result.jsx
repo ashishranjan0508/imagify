@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { assets } from '../assets/assets';
+import {motion} from 'framer-motion'
 
 
 export const Result = () => {
@@ -13,7 +14,12 @@ export const Result = () => {
   }
 
   return (
-  <form onSubmit={onSubmitHandler}
+  <motion.form
+      initial={{opacity:0.2, y:100}}
+      transition={{duration:1}}
+      whileInView={{opacity:1, y:0}}
+      viewport={{once:true}}
+   onSubmit={onSubmitHandler}
   className='flex flex-col min-h-[90vh] justify-center items-center '> 
   <div className='my-20'>
       <div className="relative">
@@ -54,6 +60,6 @@ export const Result = () => {
       <a href='image' download className='bg-zinc-900 px-10 py-3 cursor-pointer flex items-center rounded-full'>Download</a>
     </div>
     }
-    </form>
+    </motion.form>
   )
 }

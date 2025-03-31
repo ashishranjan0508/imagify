@@ -7,6 +7,7 @@ import { AppContext } from '../context/AppContext';
 
 export const Navbar = () => {
     const {user} = useContext(AppContext)
+    const {setShowLogin} = useContext(AppContext);
     // console.log("Hola")
     // console.log(user);
     // console.log("Hola")
@@ -27,7 +28,8 @@ export const Navbar = () => {
                 <div className='flex items-center gap-4 sm:gap-4 md:gap-6 lg:gap-8'>
                     <p onClick={() => { navigate('/buy') }} className='cursor-pointer'>Pricing</p>
                     <button className='className="w-full text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4
-                    focus:ring-gray-300 font-medium rounded-lg text-md px-5 py-0.5 me-2 mb-2 mt-3"'>Login</button>
+                    focus:ring-gray-300 font-medium rounded-lg text-md px-5 py-0.5 me-2 mb-2 mt-3"'
+                    onClick={()=>{setShowLogin(true)}} >Login</button>
                 </div>
             }
         </div>
