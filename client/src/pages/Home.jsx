@@ -19,8 +19,6 @@ export const Home = () => {
        <div className='flex-col flex items-center text-slate-800 text-3xl'>
        See the magic. Try now</div> 
        <GenerateBtn></GenerateBtn>
-       
-
     </div>
    
   )
